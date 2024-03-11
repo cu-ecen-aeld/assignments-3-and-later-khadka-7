@@ -1,0 +1,14 @@
+CC := gcc
+CFLAGS := -Wall -Wextra
+LDFLAGS := -lutil
+
+# Target for compiling the program
+all: aesdsocket
+
+# Default target
+aesdsocket: aesdsocket.c
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
+# Clean up
+clean:
+	rm -f aesdsocket
